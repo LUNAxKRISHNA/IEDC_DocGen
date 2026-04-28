@@ -1,0 +1,13 @@
+{
+  "name": "Approval Letter",
+  "description": "Official event approval from IEDC",
+  "icon": "📋",
+  "fields": [
+    {"label": "Event Name", "name": "event_name", "type": "text", "required": true, "placeholder": "e.g. TechFest 2025"},
+    {"label": "Date", "name": "date", "type": "date", "required": true},
+    {"label": "Venue", "name": "venue", "type": "text", "placeholder": "e.g. Seminar Hall, Block A"},
+    {"label": "Coordinator", "name": "coordinator", "type": "text", "required": true, "placeholder": "Full name"},
+    {"label": "Department", "name": "department", "type": "text", "placeholder": "e.g. CSE"},
+    {"label": "Description", "name": "description", "type": "textarea", "placeholder": "Brief description of the event..."}
+  ]
+}

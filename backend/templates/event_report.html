@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; padding: 48px 56px; color: #111; background: #fff; font-size: 13px; }
+  .header { display: flex; align-items: center; gap: 18px; border-bottom: 3px double #dc2626; padding-bottom: 14px; margin-bottom: 20px; }
+  .logo { width: 66px; height: 66px; background: #dc2626; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 20px; letter-spacing: 1px; line-height: 1.1; }
+  .logo span { font-size: 8px; font-weight: 600; letter-spacing: 0.5px; }
+  .org h1 { font-size: 17px; font-weight: bold; }
+  .org p { font-size: 11px; color: #555; margin-top: 2px; }
+  .doc-title { text-align: center; font-size: 15px; font-weight: bold; text-transform: uppercase; letter-spacing: 3px; color: #dc2626; border: 1px solid #dc2626; padding: 6px 0; margin-bottom: 20px; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 24px; }
+  .stat-box { border: 1px solid #e5e7eb; border-radius: 6px; padding: 10px 14px; }
+  .stat-label { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 0.5px; }
+  .stat-value { font-size: 16px; font-weight: bold; color: #dc2626; margin-top: 2px; }
+  .section-title { font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; color: #dc2626; border-bottom: 1px solid #dc2626; padding-bottom: 4px; margin: 18px 0 10px; }
+  .section-body { line-height: 1.8; color: #333; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  thead tr { background: #dc2626; color: #fff; }
+  thead th { padding: 8px 10px; text-align: left; font-size: 12px; }
+  tbody tr:nth-child(even) { background: #fef2f2; }
+  tbody td { padding: 7px 10px; border-bottom: 1px solid #e5e7eb; font-size: 12px; }
+  .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; margin-bottom: 20px; font-size: 12px; }
+  .meta-item { display: flex; gap: 6px; }
+  .meta-label { font-weight: bold; min-width: 120px; }
+  .sig-row { display: flex; justify-content: space-between; margin-top: 48px; }
+  .sig-block { text-align: center; width: 180px; }
+  .sig-line { border-top: 1px solid #111; margin-bottom: 4px; }
+  .sig-sub { font-size: 10px; color: #555; }
+  .footer { margin-top: 40px; border-top: 1px solid #e5e7eb; padding-top: 8px; text-align: center; font-size: 10px; color: #9ca3af; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">IEDC<span>KSUM</span></div>
+    <div class="org">
+      <h1>Innovation &amp; Entrepreneurship Development Cell</h1>
+      <p>Affiliated to Kerala Startup Mission (KSUM) &nbsp;|&nbsp; Government of Kerala</p>
+    </div>
+  </div>
+
+  <div class="doc-title">Post-Event Report</div>
+
+  <div class="stats">
+    <div class="stat-box"><div class="stat-label">Event</div><div class="stat-value" style="font-size:13px">{{ event_name if event_name else '—' }}</div></div>
+    <div class="stat-box"><div class="stat-label">Date</div><div class="stat-value" style="font-size:13px">{{ date if date else '—' }}</div></div>
+    <div class="stat-box"><div class="stat-label">Participants</div><div class="stat-value">{{ participants if participants else '0' }}</div></div>
+  </div>
+
+  <div class="meta-grid">
+    <div class="meta-item"><span class="meta-label">Venue:</span><span>{{ venue if venue else '—' }}</span></div>
+    <div class="meta-item"><span class="meta-label">Coordinator:</span><span>{{ coordinator if coordinator else '—' }}</span></div>
+    {% if chief_guest %}<div class="meta-item"><span class="meta-label">Chief Guest / Speaker:</span><span>{{ chief_guest }}</span></div>{% endif %}
+  </div>
+
+  {% if summary %}
+  <div class="section-title">Event Summary</div>
+  <div class="section-body">{{ summary }}</div>
+  {% endif %}
+
+  {% if outcomes %}
+  <div class="section-title">Key Outcomes</div>
+  <div class="section-body">{{ outcomes }}</div>
+  {% endif %}
+
+  {% if sessions %}
+  <div class="section-title">Session Timeline</div>
+  <table>
+    <thead><tr><th>Time</th><th>Session / Activity</th><th>Speaker / Facilitator</th></tr></thead>
+    <tbody>
+      {% for s in sessions %}
+      <tr>
+        <td>{{ s.time if s.time else '—' }}</td>
+        <td>{{ s.session if s.session else '—' }}</td>
+        <td>{{ s.speaker if s.speaker else '—' }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+
+  <div class="sig-row">
+    <div class="sig-block">
+      <div class="sig-line"></div>
+      <div>{{ coordinator if coordinator else '—' }}</div>
+      <div class="sig-sub">Event Coordinator</div>
+    </div>
+    <div class="sig-block">
+      <div class="sig-line"></div>
+      <div>IEDC Nodal Officer</div>
+      <div class="sig-sub">Innovation &amp; Entrepreneurship Development Cell</div>
+    </div>
+  </div>
+
+  <div class="footer">This document was generated by IEDC Document Generator &nbsp;|&nbsp; For official use only</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "Budget Sheet",
+  "description": "Itemized event budget with computed totals",
+  "icon": "💰",
+  "fields": [
+    {"label": "Event Name", "name": "event_name", "type": "text", "required": true, "placeholder": "e.g. Startup Summit"},
+    {"label": "Date", "name": "date", "type": "date"},
+    {"label": "Prepared By", "name": "prepared_by", "type": "text", "placeholder": "Name of person preparing"},
+    {"label": "Academic Year", "name": "academic_year", "type": "text", "placeholder": "e.g. 2024-25"},
+    {
+      "label": "Budget Items",
+      "name": "budget_items",
+      "type": "table",
+      "columns": [
+        {"name": "item", "label": "Item Description"},
+        {"name": "quantity", "label": "Qty"},
+        {"name": "unit_cost", "label": "Unit Cost (₹)"},
+        {"name": "total", "label": "Total (₹)", "computed": true}
+      ]
+    }
+  ]
+}

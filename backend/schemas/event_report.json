@@ -1,0 +1,25 @@
+{
+  "name": "Event Report",
+  "description": "Post-event report with outcomes and timeline",
+  "icon": "📊",
+  "fields": [
+    {"label": "Event Name", "name": "event_name", "type": "text", "required": true},
+    {"label": "Date", "name": "date", "type": "date"},
+    {"label": "Venue", "name": "venue", "type": "text"},
+    {"label": "Total Participants", "name": "participants", "type": "number", "placeholder": "0"},
+    {"label": "Chief Guest / Speaker", "name": "chief_guest", "type": "text"},
+    {"label": "Coordinator", "name": "coordinator", "type": "text", "required": true},
+    {"label": "Event Summary", "name": "summary", "type": "textarea", "placeholder": "Brief summary of what happened..."},
+    {"label": "Key Outcomes", "name": "outcomes", "type": "textarea", "placeholder": "List key outcomes and takeaways..."},
+    {
+      "label": "Session Timeline",
+      "name": "sessions",
+      "type": "table",
+      "columns": [
+        {"name": "time", "label": "Time"},
+        {"name": "session", "label": "Session / Activity"},
+        {"name": "speaker", "label": "Speaker / Facilitator"}
+      ]
+    }
+  ]
+}
