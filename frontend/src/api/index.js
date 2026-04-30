@@ -25,22 +25,6 @@ export const downloadPdf = async (name, data) => {
   URL.revokeObjectURL(url);
 };
 
-export const downloadDocx = async (name, data) => {
-  const res = await api.post(
-    "/generate/docx",
-    { name, data },
-    { responseType: "blob" }
-  );
-  const url = URL.createObjectURL(
-    new Blob([res.data], {
-      type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-    })
-  );
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `${name}.docx`;
-  a.click();
-  URL.revokeObjectURL(url);
-};
+
 
 export default api;

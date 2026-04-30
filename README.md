@@ -43,7 +43,6 @@ Then open: **http://localhost:5173**
 | GET | `/templates/{name}` | Get schema + HTML |
 | POST | `/preview` | `{name, data}` → HTML string |
 | POST | `/generate/pdf` | `{name, data}` → PDF download |
-| POST | `/generate/docx` | `{name, data}` → DOCX download |
 | GET | `/health` | Backend health check |
 
 ## Adding New Templates

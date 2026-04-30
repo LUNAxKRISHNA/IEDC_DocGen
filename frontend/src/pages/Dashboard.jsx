@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getTemplates } from "../api";
 import TemplateCard from "../components/TemplateCard";
+import Logo from "../components/Logo";
+
+import Navbar from "../components/Navbar";
 
 export default function Dashboard() {
   const [templates, setTemplates] = useState([]);
@@ -17,37 +20,19 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Top Nav */}
-      <header className="bg-ink text-white">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-primary-600 flex items-center justify-center text-sm font-black tracking-tight">
-              IE
-            </div>
-            <div>
-              <div className="text-sm font-semibold leading-tight">IEDC Document Generator</div>
-              <div className="text-xs text-white/50 leading-tight">Kerala Startup Mission</div>
-            </div>
-          </div>
-          <div className="hidden sm:flex items-center gap-1.5 text-xs text-white/40 bg-white/5 rounded-lg px-3 py-1.5 border border-white/10">
-            <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            Local mode — no data is stored
-          </div>
-        </div>
-      </header>
+      <Navbar isHome={true} />
 
       {/* Hero */}
-      <div className="bg-white border-b border-gray-100">
+      <div className="bg-white border-b border-gray-100 pt-24">
         <div className="max-w-6xl mx-auto px-6 py-12">
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-2xl shrink-0">
-              📝
+            <div className="w-48 h- rounded-xl bg-gray-50 flex items-center justify-center shrink-0 overflow-hidden p-2">
+              <Logo variant="black" className="h-full" />
             </div>
             <div>
               <h1 className="text-2xl font-bold text-ink mb-1">Document Templates</h1>
               <p className="text-ink-muted max-w-xl">
-                Select a template below to open the editor. Fill in your details, preview the
-                document live, then export to PDF or DOCX — all locally.
+                Select a template below to open the editor.
               </p>
             </div>
           </div>
@@ -93,13 +78,6 @@ export default function Dashboard() {
           </>
         )}
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-gray-100 py-6 mt-auto">
-        <p className="text-center text-xs text-ink-faint">
-          IEDC Document Generator &nbsp;·&nbsp; Local MVP &nbsp;·&nbsp; No data is ever sent to a server
-        </p>
-      </footer>
     </div>
   );
 }

@@ -107,17 +107,7 @@ async def generate_pdf(req: GenerateRequest):
     )
 
 
-@app.post("/generate/docx")
-def generate_docx_endpoint(req: GenerateRequest):
-    from generate_docx import build_docx
-    schema = load_schema(req.name)
-    out_path = GENERATED_DIR / f"{req.name}_{uuid.uuid4().hex[:8]}.docx"
-    build_docx(schema, req.data, str(out_path))
-    return FileResponse(
-        str(out_path),
-        media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        filename=f"{req.name}.docx",
-    )
+
 
 
 @app.get("/health")
