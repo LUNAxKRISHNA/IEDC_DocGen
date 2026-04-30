@@ -24,7 +24,3 @@ export const downloadPdf = async (name, data) => {
   a.click();
   URL.revokeObjectURL(url);
 };
-
-
-
-export default api;

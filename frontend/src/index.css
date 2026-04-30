@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital@0;1&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +8,7 @@
   *, *::before, *::after { box-sizing: border-box; }
   html { font-family: 'Inter', system-ui, sans-serif; }
   body { @apply bg-gray-50 text-ink; }
-  h1,h2,h3,h4 { @apply font-semibold text-ink; }
+  h1,h2,h3,h4,h5,h6 { @apply font-semibold text-ink; font-family: 'Bricolage Grotesque', sans-serif; }
 }
 
 @layer components {

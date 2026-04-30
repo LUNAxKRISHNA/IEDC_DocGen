@@ -3,7 +3,6 @@ import { downloadPdf } from "../api";
 
 export default function DownloadButtons({ templateName, formData, disabled }) {
   const [pdfLoading, setPdfLoading] = useState(false);
-
   const [error, setError] = useState(null);
 
   const handlePdf = async () => {
@@ -44,7 +43,6 @@ export default function DownloadButtons({ templateName, formData, disabled }) {
         )}
         {pdfLoading ? "Generating…" : "Download PDF"}
       </button>
-
 
     </div>
   );
