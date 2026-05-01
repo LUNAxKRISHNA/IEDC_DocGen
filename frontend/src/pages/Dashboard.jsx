@@ -49,7 +49,7 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
 
       {/* ── FLOATING WORD KEYFRAMES ── */}
       <style>{`
@@ -61,7 +61,7 @@ export default function Dashboard() {
       `}</style>
 
       {/* ── HERO ── */}
-      <section className="relative overflow-hidden min-h-screen flex items-center border-b border-gray-100">
+      <section className="relative overflow-hidden min-h-screen flex items-center border-b border-gray-100 bg-white">
 
         {/* Floating background words */}
         <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
@@ -99,7 +99,7 @@ export default function Dashboard() {
                 </span>
 
                 <span
-                  className="block text-[4rem] sm:text-[6rem] lg:text-[8.5rem] italic font-normal lowercase text-[#E53935]"
+                  className="block text-[4rem] sm:text-[6rem] lg:text-[8.5rem] italic font-bold lowercase text-[#E53935]"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   document.
@@ -128,7 +128,7 @@ export default function Dashboard() {
             <div className="flex-1 w-full max-w-sm mx-auto lg:mx-0">
               <div className="flex items-center gap-3 mb-5">
                 <div className="h-px bg-gray-200 flex-1" />
-                <span className="text-[0.65rem] font-bold text-gray-400 uppercase tracking-[0.2em]">Featured Templates</span>
+                <span className="text-[0.65rem] font-bold text-gray-400 uppercase tracking-[0.2em]">Quick Start Templates</span>
                 <div className="h-px bg-gray-200 flex-1" />
               </div>
 
@@ -144,7 +144,7 @@ export default function Dashboard() {
                 ))}
 
                 {featuredTemplates.map(tpl => (
-                  <TemplateCard key={tpl.id} template={tpl} />
+                  <TemplateCard key={tpl.id} template={tpl} featured />
                 ))}
               </div>
             </div>
