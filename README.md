@@ -10,31 +10,11 @@ python -m venv venv
 pip install -r requirements.txt
 playwright install chromium
 ```
-
-### Frontend  
-*(already done — dependencies installed in d:\Works\Vahan_Mitra\frontend)*
-
----
-
-## Run the App
-
-**Terminal 1 — Backend:**
 ```powershell
 cd d:\Works\IEDC_DocGen\backend
 .\venv\Scripts\Activate.ps1
 uvicorn main:app --reload --port 8000
 ```
-
-**Terminal 2 — Frontend:**
-```powershell
-cd d:\Works\Vahan_Mitra\frontend
-npm run dev
-```
-
-Then open: **http://localhost:5173**
-
----
-
 ## API Reference
 
 | Method | Endpoint | Description |
