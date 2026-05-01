@@ -1,11 +1,10 @@
 import { useEffect, useState, useCallback } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getTemplate, previewTemplate } from "../api";
 import DynamicForm from "../components/DynamicForm";
 import LivePreview from "../components/LivePreview";
 import DownloadButtons from "../components/DownloadButtons";
-import Logo from "../components/Logo";
-import Navbar from "../components/Navbar";
+import { useNavbar } from "../context/NavbarContext";
 
 function useDebounce(value, delay) {
   const [debounced, setDebounced] = useState(value);
@@ -68,31 +67,32 @@ export default function TemplateEditor() {
     setPreviewHtml("");
   };
 
+  const { setNavbarProps } = useNavbar();
+
+  useEffect(() => {
+    setNavbarProps({
+      leftContent: (
+        <div className="flex items-center gap-2 max-w-[40vw] sm:max-w-[30vw]">
+          <span className="text-[0.85rem] font-semibold text-white truncate hidden sm:block" title={schema?.name || name}>
+            {schema?.name || name}
+          </span>
+        </div>
+      ),
+      rightContent: (
+        <div className="flex items-center gap-1 sm:gap-2">
+          <DownloadButtons
+            templateName={name}
+            formData={formData}
+            disabled={!schema}
+          />
+        </div>
+      ),
+      isHome: false
+    });
+  }, [setNavbarProps, schema, name, formData]);
+
   return (
     <div className="h-screen flex flex-col overflow-hidden bg-gray-50">
-      <Navbar
-        leftContent={
-          <div className="flex items-center gap-2 max-w-[40vw] sm:max-w-[30vw]">
-            <span className="text-[0.85rem] font-semibold text-white truncate hidden sm:block" title={schema?.name || name}>
-              {schema?.name || name}
-            </span>
-          </div>
-        }
-        centerContent={
-          <Link to="/">
-            <Logo variant="white" className="h-8" />
-          </Link>
-        }
-        rightContent={
-          <div className="flex items-center gap-1 sm:gap-2">
-            <DownloadButtons
-              templateName={name}
-              formData={formData}
-              disabled={!schema}
-            />
-          </div>
-        }
-      />
 
       <div className="flex flex-col flex-1 overflow-hidden pt-[84px]">
         {pageError && (
