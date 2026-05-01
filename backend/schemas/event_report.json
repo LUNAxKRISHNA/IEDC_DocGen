@@ -1,25 +1,46 @@
 {
   "name": "Event Report",
-  "description": "Post-event report with outcomes and timeline",
-  "icon": "📊",
+  "description": "Comprehensive post-event report",
+  "icon": "📝",
   "fields": [
-    {"label": "Event Name", "name": "event_name", "type": "text", "required": true},
-    {"label": "Date", "name": "date", "type": "date"},
+    {"label": "Program / Activity Name", "name": "event_name", "type": "text", "required": true},
+    {"label": "Program Theme", "name": "theme", "type": "text"},
+    {"label": "Program driven by", "name": "driven_by", "type": "text", "placeholder": "e.g. CVV-IEDC & IIC"},
     {"label": "Venue", "name": "venue", "type": "text"},
-    {"label": "Total Participants", "name": "participants", "type": "number", "placeholder": "0"},
-    {"label": "Chief Guest / Speaker", "name": "chief_guest", "type": "text"},
-    {"label": "Coordinator", "name": "coordinator", "type": "text", "required": true},
-    {"label": "Event Summary", "name": "summary", "type": "textarea", "placeholder": "Brief summary of what happened..."},
-    {"label": "Key Outcomes", "name": "outcomes", "type": "textarea", "placeholder": "List key outcomes and takeaways..."},
+    {"label": "Month", "name": "month", "type": "text", "placeholder": "e.g. March 2025"},
+    {"label": "Date", "name": "date", "type": "date"},
+    {"label": "No. of Participants", "name": "participants", "type": "number"},
+    {"label": "Expenditure Amount (Rs.)", "name": "expenditure", "type": "number"},
+    {"label": "Objective", "name": "objective", "type": "textarea", "placeholder": "Event objective..."},
     {
-      "label": "Session Timeline",
-      "name": "sessions",
+      "label": "Dignitaries and Speakers",
+      "name": "speakers",
       "type": "table",
       "columns": [
-        {"name": "time", "label": "Time"},
-        {"name": "session", "label": "Session / Activity"},
-        {"name": "speaker", "label": "Speaker / Facilitator"}
+        {"name": "name", "label": "Name & Designation"}
       ]
-    }
+    },
+    {"label": "About the event", "name": "about", "type": "textarea", "placeholder": "Detailed event summary..."},
+    {"label": "Conclusion", "name": "conclusion", "type": "textarea", "placeholder": "Event conclusion..."},
+    {
+      "label": "Faculty Coordinators",
+      "name": "faculty_coordinators",
+      "type": "table",
+      "columns": [
+        {"name": "name", "label": "Name & Designation"}
+      ]
+    },
+    {
+      "label": "Student Coordinators",
+      "name": "student_coordinators",
+      "type": "table",
+      "columns": [
+        {"name": "name", "label": "Name & Class"}
+      ]
+    },
+    {"label": "Banner Image", "name": "banner_img", "type": "image"},
+    {"label": "Inaugural Session Image", "name": "inaugural_img", "type": "image"},
+    {"label": "Group Photo Image", "name": "group_img", "type": "image"},
+    {"label": "Certificate Image", "name": "certificate_img", "type": "image"}
   ]
 }

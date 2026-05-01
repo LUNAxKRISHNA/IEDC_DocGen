@@ -140,6 +140,71 @@ export default function DynamicForm({ schema, formData, onChange }) {
                 value={formData[name]}
                 onChange={(val) => handleChange(name, val)}
               />
+            ) : type === "image" ? (
+              <div className="space-y-3">
+                <label className="flex items-center justify-center w-full py-3 px-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 hover:border-primary-500 transition-colors">
+                  <div className="flex items-center gap-2 text-gray-500">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
+                    <span className="text-sm font-medium">Click to upload images</span>
+                  </div>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    multiple
+                    className="hidden"
+                    onChange={(e) => {
+                      const files = Array.from(e.target.files);
+                      const currentImages = Array.isArray(formData[name]) 
+                        ? formData[name] 
+                        : (formData[name] ? [formData[name]] : []);
+                      
+                      const readers = files.map(file => {
+                        return new Promise((resolve) => {
+                          const reader = new FileReader();
+                          reader.onloadend = () => resolve(reader.result);
+                          reader.readAsDataURL(file);
+                        });
+                      });
+                      
+                      Promise.all(readers).then(results => {
+                        handleChange(name, [...currentImages, ...results]);
+                      });
+                      
+                      e.target.value = ''; // Reset input so same file can be selected again
+                    }}
+                  />
+                </label>
+                
+                {formData[name] && (() => {
+                  const images = Array.isArray(formData[name]) 
+                    ? formData[name] 
+                    : (formData[name] ? [formData[name]] : []);
+                    
+                  if (images.length === 0) return null;
+                  
+                  return (
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                      {images.map((img, idx) => (
+                        <div key={idx} className="relative group rounded-lg overflow-hidden border border-gray-200 aspect-video bg-gray-50">
+                          <img src={img} alt={`preview ${idx}`} className="w-full h-full object-cover" />
+                          <button 
+                            type="button"
+                            onClick={() => {
+                              const newImages = [...images];
+                              newImages.splice(idx, 1);
+                              handleChange(name, newImages);
+                            }}
+                            className="absolute top-1 right-1 bg-red-500 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-sm"
+                            title="Remove image"
+                          >
+                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  );
+                })()}
+              </div>
             ) : type === "textarea" ? (
               <textarea
                 id={`field-${name}`}
