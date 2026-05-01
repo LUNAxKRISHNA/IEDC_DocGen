@@ -1,13 +1,18 @@
 {
-  "name": "Approval Letter",
-  "description": "Official event approval from IEDC",
+  "name": "Approval Request Letter",
+  "description": "Request for permission to conduct an event",
   "icon": "📋",
   "fields": [
-    {"label": "Event Name", "name": "event_name", "type": "text", "required": true, "placeholder": "e.g. TechFest 2025"},
+    {"label": "Ref No", "name": "ref_no", "type": "text", "required": true, "placeholder": "e.g. CVVIEDC/SE/01"},
+    {"label": "To Designation", "name": "to_designation", "type": "text", "required": true, "placeholder": "e.g. The Nodal Officer"},
+    {"label": "To Department", "name": "to_department", "type": "text", "required": true, "placeholder": "e.g. Innovation Entrepreneurship Development Centre"},
+    {"label": "To Organization", "name": "to_organization", "type": "text", "required": true, "placeholder": "e.g. Chinmaya Vishwa Vidyapeeth"},
     {"label": "Date", "name": "date", "type": "date", "required": true},
-    {"label": "Venue", "name": "venue", "type": "text", "placeholder": "e.g. Seminar Hall, Block A"},
-    {"label": "Coordinator", "name": "coordinator", "type": "text", "required": true, "placeholder": "Full name"},
-    {"label": "Department", "name": "department", "type": "text", "placeholder": "e.g. CSE"},
-    {"label": "Description", "name": "description", "type": "textarea", "placeholder": "Brief description of the event..."}
+    {"label": "Subject", "name": "subject", "type": "text", "required": true, "placeholder": "e.g. Request for Permission to Conduct 'Aarohi 2025 - Women's Day Celebration'"},
+    {"label": "Salutation", "name": "salutation", "type": "text", "required": true, "placeholder": "e.g. Respected Nodal Officer,"},
+    {"label": "Body Paragraphs", "name": "body_text", "type": "textarea", "required": true, "placeholder": "Enter paragraphs separated by newlines"},
+    {"label": "Sender Name", "name": "sender_name", "type": "text", "required": true, "placeholder": "e.g. Krishna K"},
+    {"label": "Sender Designation", "name": "sender_designation", "type": "text", "required": true, "placeholder": "e.g. Student Lead"},
+    {"label": "Sender Department", "name": "sender_department", "type": "text", "required": true, "placeholder": "e.g. CVV IEDC"}
   ]
 }
