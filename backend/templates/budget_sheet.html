@@ -147,14 +147,14 @@
   <div class="content">
     <div class="doc-title">Budget Sheet</div>
 
-    <div class="event-name">Event Name: <span>{{ event_name if event_name else "AAROHI - Women's Day" }}</span></div>
+    <div class="event-name">Event Name: <span>{{ event_name }}</span></div>
 
     <div class="meta-row">
-      <div>Date: <span>{{ date if date else '07 March 2025' }}</span></div>
-      <div>Time: <span>{{ time if time else '9:45 AM' }}</span></div>
+      <div>Date: <span>{{ date }}</span></div>
+      <div>Time: <span>{{ time }}</span></div>
     </div>
 
-    <div class="mode-row">Mode of the Event: <span>{{ mode if mode else 'Offline' }}</span></div>
+    <div class="mode-row">Mode of the Event: <span>{{ mode }}</span></div>
 
     <!-- Faculty Coordinator Table -->
     <div class="section-title">Faculty Coordinator</div>
@@ -175,12 +175,6 @@
           <td class="text-left">{{ row.school }}</td>
         </tr>
         {% endfor %}
-        {% else %}
-        <tr>
-          <td class="text-left">1</td>
-          <td class="text-left">Dr. Uma Narayanan</td>
-          <td class="text-left">CVV-IST</td>
-        </tr>
         {% endif %}
       </tbody>
     </table>
@@ -206,19 +200,6 @@
           <td class="text-left">{{ row.branch }}</td>
         </tr>
         {% endfor %}
-        {% else %}
-        <tr>
-          <td class="text-left">1</td>
-          <td class="text-left">Krishna K</td>
-          <td class="text-left">2<sup>nd</sup> Year 4<sup>th</sup> Sem</td>
-          <td class="text-left">B.Tech CS</td>
-        </tr>
-        <tr>
-          <td class="text-left">2</td>
-          <td class="text-left">Anagha Suresh</td>
-          <td class="text-left">2<sup>nd</sup> Year 4<sup>th</sup> Sem</td>
-          <td class="text-left">B.Tech CS</td>
-        </tr>
         {% endif %}
       </tbody>
     </table>
@@ -255,67 +236,6 @@
         <tr class="total-row">
           <td colspan="4" class="text-center">TOTAL</td>
           <td class="text-right">{{ ns.grand }}</td>
-        </tr>
-        {% else %}
-        <tr>
-          <td class="text-right">1</td>
-          <td class="text-left">Stage Decoration</td>
-          <td class="text-left">Cash</td>
-          <td class="text-left">Bill</td>
-          <td class="text-right">850</td>
-        </tr>
-        <tr>
-          <td class="text-right">2</td>
-          <td class="text-left">Banner</td>
-          <td class="text-left">Cash</td>
-          <td class="text-left">Bill</td>
-          <td class="text-right">360</td>
-        </tr>
-        <tr>
-          <td class="text-right">3</td>
-          <td class="text-left">Stationary</td>
-          <td class="text-left">Online</td>
-          <td class="text-left">Bill</td>
-          <td class="text-right">1958</td>
-        </tr>
-        <tr>
-          <td class="text-right">4</td>
-          <td class="text-left">Certificate</td>
-          <td class="text-left">Cash</td>
-          <td class="text-left">Bill</td>
-          <td class="text-right">1398</td>
-        </tr>
-        <tr>
-          <td class="text-right">5</td>
-          <td class="text-left">Gift for Guest</td>
-          <td class="text-left">Online</td>
-          <td class="text-left">Bill</td>
-          <td class="text-right">4845</td>
-        </tr>
-        <tr>
-          <td class="text-right">6</td>
-          <td class="text-left">Stage and Curtains</td>
-          <td class="text-left">Cash</td>
-          <td class="text-left">Bill</td>
-          <td class="text-right">7500</td>
-        </tr>
-        <tr>
-          <td class="text-right">7</td>
-          <td class="text-left">Guest Remuneration</td>
-          <td class="text-left">Cash</td>
-          <td class="text-left">Voucher</td>
-          <td class="text-right">6500</td>
-        </tr>
-        <tr>
-          <td class="text-right">8</td>
-          <td class="text-left">Cash prize</td>
-          <td class="text-left">Cash</td>
-          <td class="text-left">Draft</td>
-          <td class="text-right">4000</td>
-        </tr>
-        <tr class="total-row">
-          <td colspan="4" class="text-center">TOTAL</td>
-          <td class="text-right">27411</td>
         </tr>
         {% endif %}
       </tbody>

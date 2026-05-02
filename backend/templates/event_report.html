@@ -101,36 +101,34 @@
 
     <div class="sub-title">Objective:</div>
     <div class="paragraph">
-      {{ objective if objective else "The event successfully empowered and inspired participants by fostering a culture
-      of inclusivity, innovation, and leadership." }}
+      {{ objective }}
     </div>
 
     <div class="sub-title">Details:</div>
     <div class="details-grid">
       <div class="detail-label">Program driven by:</div>
-      <div class="detail-value">{{ driven_by if driven_by else "CVV-IEDC & IIC" }}</div>
+      <div class="detail-value">{{ driven_by }}</div>
 
       <div class="detail-label">Venue:</div>
-      <div class="detail-value">{{ venue if venue else "LP - Atrium" }}</div>
+      <div class="detail-value">{{ venue }}</div>
 
       <div class="detail-label">Month:</div>
-      <div class="detail-value">{{ month if month else "March 2025" }}</div>
+      <div class="detail-value">{{ month }}</div>
 
       <div class="detail-label">Program / Activity Name:</div>
-      <div class="detail-value">{{ event_name if event_name else "AAROHI: Ascending Beyond Limits, Women's Day
-        Celebration 2025" }}</div>
+      <div class="detail-value">{{ event_name }}</div>
 
       <div class="detail-label">Program Theme:</div>
-      <div class="detail-value">{{ theme if theme else "Empower, Inspire, Elevate" }}</div>
+      <div class="detail-value">{{ theme }}</div>
 
       <div class="detail-label">No. of Participants:</div>
-      <div class="detail-value">{{ participants if participants else "220" }}</div>
+      <div class="detail-value">{{ participants }}</div>
 
       <div class="detail-label">Date:</div>
-      <div class="detail-value">{{ date if date else "07.03.2025" }}</div>
+      <div class="detail-value">{{ date }}</div>
 
       <div class="detail-label">Expenditure Amount:</div>
-      <div class="detail-value">Rs. {{ expenditure if expenditure else "30000" }}/-</div>
+      <div class="detail-value">Rs. {{ expenditure }}/-</div>
     </div>
 
     <div class="section-title">Dignitaries and Speakers</div>
@@ -139,24 +137,14 @@
       {% for row in speakers %}
       <li>{{ row.name }}</li>
       {% endfor %}
-      {% else %}
-      <li>Prof. Ajay Kapoor, Vice Chancellor, Chinmaya Vishwa Vidyapeeth</li>
-      <li>Dr. Sunitha Grandhee, Dean of Student Affairs, Chinmaya Vishwa Vidyapeeth</li>
-      <li>Ms. Sujata Madhav Chandran, Global Head - Strategic Initiatives, Analytics @ECBO, TCS</li>
       {% endif %}
     </ol>
 
     <div class="section-title">About the event:</div>
-    <div class="paragraph" style="white-space: pre-wrap;">{{ about if about else "The event commenced with a ceremonial
-      lamp lighting, symbolizing enlightenment and progress. The formal proceedings began with a welcome address setting
-      the stage for a day of learning and empowerment.\n\nFollowing the formal proceedings, the event took a vibrant
-      turn with dynamic performances and insightful sessions by industry leaders, emphasizing financial independence,
-      leadership roles, and overcoming workplace challenges." }}</div>
+    <div class="paragraph" style="white-space: pre-wrap;">{{ about }}</div>
 
     <div class="section-title">Conclusion:</div>
-    <div class="paragraph" style="white-space: pre-wrap;">{{ conclusion if conclusion else "With an outstanding lineup
-      of speakers, interactive competitions, and vibrant performances, the event was a resounding success. It not only
-      honoured the contributions but also initiated impactful conversations on empowerment and leadership." }}</div>
+    <div class="paragraph" style="white-space: pre-wrap;">{{ conclusion }}</div>
 
     <div class="section-title">Coordinators:</div>
     <div class="sub-title">Faculty coordinator:</div>
@@ -165,8 +153,6 @@
       {% for row in faculty_coordinators %}
       <li>{{ row.name }}</li>
       {% endfor %}
-      {% else %}
-      <li>Dr. Uma Narayanan, Asst. Professor of Computer Science, CVV-IST.</li>
       {% endif %}
     </ol>
 
@@ -176,9 +162,6 @@
       {% for row in student_coordinators %}
       <li>{{ row.name }}</li>
       {% endfor %}
-      {% else %}
-      <li>Mr. Krishna K, (2nd Year, B.Tech Computer Science)</li>
-      <li>Mrs. Anagha Suresh, (2nd Year, B.Tech Computer Science)</li>
       {% endif %}
     </ol>
 

@@ -1,0 +1,8 @@
+{
+  "name": "Registration Sheet",
+  "description": "List of registered participants",
+  "icon": "📝",
+  "fields": [
+    {"label": "Placeholder", "name": "placeholder", "type": "text", "required": false, "placeholder": "To be filled later"}
+  ]
+}

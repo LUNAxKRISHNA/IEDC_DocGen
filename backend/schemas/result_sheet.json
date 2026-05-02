@@ -1,0 +1,8 @@
+{
+  "name": "Result Sheet",
+  "description": "Results of the event or competition",
+  "icon": "🏆",
+  "fields": [
+    {"label": "Placeholder", "name": "placeholder", "type": "text", "required": false, "placeholder": "To be filled later"}
+  ]
+}

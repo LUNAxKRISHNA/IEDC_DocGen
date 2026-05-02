@@ -292,27 +292,26 @@
 
   <div class="content">
     <div class="ref-section">
-      Ref: {{ ref_no if ref_no else 'CVVIEDC/SE/01' }}
+      Ref: {{ ref_no }}
     </div>
 
     <div class="to-section">
       <strong>To,</strong><br>
-      {{ to_designation if to_designation else 'The Nodal Officer' }}<br>
-      {{ to_department if to_department else 'Innovation Entrepreneurship Development Centre' }}<br>
-      {{ to_organization if to_organization else 'Chinmaya Vishwa Vidyapeeth' }}
+      {{ to_designation }}<br>
+      {{ to_department }}<br>
+      {{ to_organization }}
     </div>
 
     <div class="date-section">
-      <strong>Date:</strong> {{ date if date else '07 March 2025' }}
+      <strong>Date:</strong> {{ date }}
     </div>
 
     <div class="subject-section">
-      <strong>Subject:</strong> {{ subject if subject else 'Request for Permission to Conduct "Aarohi 2025 - Women\'s
-      Day Celebration"' }}
+      <strong>Subject:</strong> {{ subject }}
     </div>
 
     <div class="salutation">
-      <strong>{{ salutation if salutation else 'Respected Nodal Officer,' }}</strong>
+      <strong>{{ salutation }}</strong>
     </div>
 
     <div class="body-text">
@@ -322,20 +321,6 @@
       <p>{{ paragraph }}</p>
       {% endif %}
       {% endfor %}
-      {% else %}
-      <p>I am writing to kindly request your permission to organize and conduct the "Aarohi 2025 - Women's Day
-        Celebration", a special initiative jointly hosted by CVV-IEDC and IIC, scheduled to be held offline on March
-        7th, 2025, at the LP Atrium.</p>
-      <p>Themed "Empower, Inspire, Elevate", the event will feature a blend of inspiring keynote sessions, engaging
-        competitions, and cultural performances, all aimed at fostering leadership, innovation, and inclusivity among
-        students. One of the key highlights will be the session "She Leads: Women in Business" by Dr. Usha Narayanan,
-        alongside other eminent speakers such as Ms. Sujata Madhav Chandran, Ms. Raji P, and Prof. Ajay Kapoor.</p>
-      <p>The celebration is expected to host over 150 participants, with an estimated expenditure of ₹30,000. It will
-        include workshops, competitions like EmpowHER, Exit or Extinct, and Battle of Brains, as well as student-led
-        cultural showcases.</p>
-      <p>We believe this initiative aligns strongly with the vision of Chinmaya Vishwa Vidyapeeth in promoting holistic
-        development, gender equity, and leadership. We request your kind approval and support to successfully organize
-        this event.</p>
       {% endif %}
     </div>
 
@@ -344,9 +329,9 @@
       <br>
       <p><strong>Yours sincerely,</strong></p>
       <div class="signature-space"></div>
-      <p>{{ sender_name if sender_name else 'Krishna K' }}<br>
-        {{ sender_designation if sender_designation else 'Student Lead' }}<br>
-        {{ sender_department if sender_department else 'CVV IEDC' }}</p>
+      <p>{{ sender_name }}<br>
+        {{ sender_designation }}<br>
+        {{ sender_department }}</p>
     </div>
   </div>
 
