@@ -1,21 +1,40 @@
 {
   "name": "Budget Sheet",
-  "description": "Itemized event budget with computed totals",
+  "description": "Itemized event budget overview",
   "icon": "💰",
   "fields": [
-    {"label": "Event Name", "name": "event_name", "type": "text", "required": true, "placeholder": "e.g. Startup Summit"},
-    {"label": "Date", "name": "date", "type": "date"},
-    {"label": "Prepared By", "name": "prepared_by", "type": "text", "placeholder": "Name of person preparing"},
-    {"label": "Academic Year", "name": "academic_year", "type": "text", "placeholder": "e.g. 2024-25"},
+    {"label": "Event Name", "name": "event_name", "type": "text", "required": true, "placeholder": "e.g. AAROHI - Women's Day"},
+    {"label": "Date", "name": "date", "type": "date", "required": true},
+    {"label": "Time", "name": "time", "type": "text", "required": true, "placeholder": "e.g. 9:45 AM"},
+    {"label": "Mode of the Event", "name": "mode", "type": "text", "required": true, "placeholder": "e.g. Offline"},
     {
-      "label": "Budget Items",
-      "name": "budget_items",
+      "label": "Faculty Coordinators",
+      "name": "faculty_coordinators",
       "type": "table",
       "columns": [
-        {"name": "item", "label": "Item Description"},
-        {"name": "quantity", "label": "Qty"},
-        {"name": "unit_cost", "label": "Unit Cost (₹)"},
-        {"name": "total", "label": "Total (₹)", "computed": true}
+        {"name": "name", "label": "Name of the Faculty"},
+        {"name": "school", "label": "Name of the School"}
+      ]
+    },
+    {
+      "label": "Student Coordinators",
+      "name": "student_coordinators",
+      "type": "table",
+      "columns": [
+        {"name": "name", "label": "Name of the Student"},
+        {"name": "year_sem", "label": "Year/Sem"},
+        {"name": "branch", "label": "Branch"}
+      ]
+    },
+    {
+      "label": "Expenses",
+      "name": "expenses",
+      "type": "table",
+      "columns": [
+        {"name": "category", "label": "Category"},
+        {"name": "transaction_method", "label": "Transaction Method"},
+        {"name": "bill_attached", "label": "Bill / UPI (Attached)"},
+        {"name": "amount", "label": "Amount Spent (₹)"}
       ]
     }
   ]

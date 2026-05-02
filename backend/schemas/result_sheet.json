@@ -1,0 +1,41 @@
+{
+  "name": "Result Sheet",
+  "description": "Results of the event or competition",
+  "icon": "🏆",
+  "fields": [
+    {"label": "Event Name", "name": "event_name", "type": "text", "required": true, "placeholder": "e.g. Hackathon 2025"},
+    {"label": "Date", "name": "date", "type": "date", "required": true},
+    {"label": "Time", "name": "time", "type": "text", "placeholder": "e.g. 10:00 AM"},
+    {"label": "Mode of the Event", "name": "mode", "type": "text", "placeholder": "e.g. Online / Offline"},
+    {
+      "label": "Faculty Coordinators",
+      "name": "faculty_coordinators",
+      "type": "table",
+      "columns": [
+        {"name": "name", "label": "Name of the Faculty"},
+        {"name": "school", "label": "Name of the School"}
+      ]
+    },
+    {
+      "label": "Jury Members",
+      "name": "jury_members",
+      "type": "table",
+      "columns": [
+        {"name": "name", "label": "Name"},
+        {"name": "type", "label": "Internal / External"},
+        {"name": "organisation", "label": "Name of the School / Organisation"}
+      ]
+    },
+    {
+      "label": "Results",
+      "name": "results",
+      "type": "table",
+      "columns": [
+        {"name": "name", "label": "Name of the Student"},
+        {"name": "school", "label": "School"},
+        {"name": "branch", "label": "Branch (Batch)"},
+        {"name": "prize", "label": "Prize Won"}
+      ]
+    }
+  ]
+}

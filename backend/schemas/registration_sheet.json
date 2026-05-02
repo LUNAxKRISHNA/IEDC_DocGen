@@ -1,0 +1,21 @@
+{
+  "name": "Registration Sheet",
+  "description": "Event participant registration list",
+  "icon": "📋",
+  "fields": [
+    {"label": "Event Name", "name": "event_name", "type": "text", "required": true, "placeholder": "e.g. Workshop on AI"},
+    {"label": "Date", "name": "date", "type": "date", "required": true},
+    {"label": "Time", "name": "time", "type": "text", "placeholder": "e.g. 10:00 AM"},
+    {"label": "Mode of the Event", "name": "mode", "type": "text", "placeholder": "e.g. Online / Offline"},
+    {
+      "label": "Participants",
+      "name": "participants",
+      "type": "table",
+      "columns": [
+        {"name": "name", "label": "Name of the Student"},
+        {"name": "school", "label": "Name of the School"},
+        {"name": "department", "label": "Department"}
+      ]
+    }
+  ]
+}

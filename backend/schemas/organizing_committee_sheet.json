@@ -1,0 +1,50 @@
+{
+  "name": "Organizing Committee Sheet",
+  "description": "Details of the organizing committee",
+  "icon": "👥",
+  "fields": [
+    {"label": "Event Name", "name": "event_name", "type": "text", "required": true, "placeholder": "e.g. Aarohi Women's Day Celebration"},
+    {"label": "Date", "name": "date", "type": "date", "required": true},
+    {"label": "Time", "name": "time", "type": "text", "required": true, "placeholder": "e.g. 9:45 AM"},
+    {"label": "Mode of the Event", "name": "mode", "type": "text", "required": true, "placeholder": "e.g. Offline"},
+    {
+      "label": "Faculty Coordinator",
+      "name": "faculty_coordinators",
+      "type": "table",
+      "columns": [
+        {"name": "name", "label": "Name of the Faculty"},
+        {"name": "school", "label": "Name of the School"}
+      ]
+    },
+    {
+      "label": "Student Coordinator",
+      "name": "student_coordinators",
+      "type": "table",
+      "columns": [
+        {"name": "name", "label": "Name of the Student"},
+        {"name": "year_sem", "label": "Year/Sem"},
+        {"name": "branch", "label": "Branch"}
+      ]
+    },
+    {
+      "label": "Organising Team",
+      "name": "organising_team",
+      "type": "table",
+      "columns": [
+        {"name": "name", "label": "Name of the Student"},
+        {"name": "year_sem", "label": "Year/Sem"},
+        {"name": "branch", "label": "Branch"}
+      ]
+    },
+    {
+      "label": "Resource Person",
+      "name": "resource_persons",
+      "type": "table",
+      "columns": [
+        {"name": "name", "label": "Name"},
+        {"name": "type", "label": "Internal / External"},
+        {"name": "organization", "label": "Name of the School/Organization"}
+      ]
+    }
+  ]
+}
