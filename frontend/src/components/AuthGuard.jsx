@@ -5,8 +5,7 @@ import { useUser, SignOutButton, SignInButton } from "@clerk/clerk-react";
  * based on a hardcoded list of allowed email addresses.
  */
 const ALLOWED_EMAILS = [
-  "your-email@gmail.com", // Replace with your actual email
-  "admin@example.com"
+  "krishna.cvv230161@cvv.ac.in"
 ];
 
 export default function AuthGuard({ children }) {
@@ -29,7 +28,7 @@ export default function AuthGuard({ children }) {
           <h1 className="text-2xl font-bold text-gray-900 mb-2">IEDC DocGen</h1>
           <p className="text-gray-500 mb-8">Please sign in to access the document generator.</p>
           <div className="btn-primary w-full flex justify-center py-3">
-             <SignInButton mode="modal" />
+            <SignInButton mode="modal" />
           </div>
         </div>
       </div>
@@ -55,7 +54,7 @@ export default function AuthGuard({ children }) {
           </p>
           <div className="flex flex-col gap-3">
             <div className="btn-outline w-full flex justify-center py-2.5">
-               <SignOutButton />
+              <SignOutButton />
             </div>
           </div>
         </div>
