@@ -292,14 +292,14 @@
 
   <div class="content">
     <div class="ref-section">
-      Ref: {{ ref_no }}
+      <b>Ref:</b> {{ ref_no }}
     </div>
 
     <div class="to-section">
       <strong>To,</strong><br>
-      {{ to_designation }}<br>
-      {{ to_department }}<br>
-      {{ to_organization }}
+      The Nodal Officer<br>
+      CVV- Innovation Entreprenuership Development Center<br>
+      Chinmaya Vishwa Vidyapeeth
     </div>
 
     <div class="date-section">
@@ -307,14 +307,15 @@
     </div>
 
     <div class="subject-section">
-      <strong>Subject:</strong> {{ subject }}
+      <strong>Subject:</strong> Request for permission to conduct " {{ event_name }} "
     </div>
 
     <div class="salutation">
-      <strong>{{ salutation }}</strong>
+      <strong>Respected Nodal Officer,</strong>
     </div>
 
     <div class="body-text">
+      <i>Greetings from CVV-IEDC,</i><br><br>
       {% if body_text %}
       {% for paragraph in body_text.split('\n') %}
       {% if paragraph.strip() %}
@@ -327,7 +328,7 @@
     <div class="sign-off">
       <p>Thank you for your time and consideration.</p>
       <br>
-      <p><strong>Yours sincerely,</strong></p>
+      <p><strong>Yours Sincerely,</strong></p>
       <div class="signature-space"></div>
       <p>{{ sender_name }}<br>
         {{ sender_designation }}<br>
