@@ -110,8 +110,7 @@ def preview(req: PreviewRequest):
 async def generate_pdf(req: GenerateRequest):
     html = render_template(req.name, req.data)
 
-    from weasyprint import HTML  # lazy import — keeps startup fast
-
+    from weasyprint import HTML
     pdf_bytes = HTML(string=html).write_pdf()
 
     return Response(
