@@ -1,24 +1,45 @@
 import json
-import uuid
+import os
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import Response
 from fastapi.staticfiles import StaticFiles
 from jinja2 import Environment, FileSystemLoader
 from pydantic import BaseModel
 
 app = FastAPI(title="IEDC Document Generator API")
 
-# Mount images directory for static access
 BASE_DIR = Path(__file__).parent
-app.mount("/static", StaticFiles(directory=str(BASE_DIR / "images")), name="static")
+
+# Mount static images for local development (templates use base64 on Vercel)
+images_dir = BASE_DIR / "images"
+if images_dir.exists():
+    try:
+        app.mount("/static", StaticFiles(directory=str(images_dir)), name="static")
+    except Exception:
+        pass
+
+# CORS: read allowed origins from env so Vercel prod URL can be added later.
+# On Vercel, frontend and backend share the same domain so CORS is not required,
+# but we keep it for local development and flexibility.
+_env_origins = os.environ.get("ALLOWED_ORIGINS", "")
+origins = (
+    _env_origins.split(",")
+    if _env_origins
+    else [
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "http://127.0.0.1:5173",
+        "http://localhost:5174",
+        "http://127.0.0.1:5174",
+    ]
+)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173", "http://localhost:5174",
-    "http://127.0.0.1:5174"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -26,8 +47,6 @@ app.add_middleware(
 
 SCHEMAS_DIR = BASE_DIR / "schemas"
 TEMPLATES_DIR = BASE_DIR / "templates"
-GENERATED_DIR = BASE_DIR / "generated"
-GENERATED_DIR.mkdir(exist_ok=True)
 
 jinja_env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
 
@@ -90,29 +109,18 @@ def preview(req: PreviewRequest):
 @app.post("/generate/pdf")
 async def generate_pdf(req: GenerateRequest):
     html = render_template(req.name, req.data)
-    out_path = GENERATED_DIR / f"{req.name}_{uuid.uuid4().hex[:8]}.pdf"
 
-    from playwright.async_api import async_playwright
-    async with async_playwright() as p:
-        browser = await p.chromium.launch()
-        page = await browser.new_page()
-        await page.set_content(html, wait_until="networkidle")
-        await page.pdf(
-            path=str(out_path),
-            format="A4",
-            print_background=True,
-            margin={"top": "0", "bottom": "0", "left": "0", "right": "0"},
-        )
-        await browser.close()
+    from weasyprint import HTML  # lazy import — keeps startup fast
 
-    return FileResponse(
-        str(out_path),
+    pdf_bytes = HTML(string=html).write_pdf()
+
+    return Response(
+        content=pdf_bytes,
         media_type="application/pdf",
-        filename=f"{req.name}.pdf",
+        headers={
+            "Content-Disposition": f'attachment; filename="{req.name}.pdf"'
+        },
     )
-
-
-
 
 
 @app.get("/health")
