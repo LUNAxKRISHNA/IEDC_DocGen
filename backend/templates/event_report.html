@@ -87,6 +87,18 @@
     li {
       margin-bottom: 5px;
     }
+    * {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 30px;
+    }
   </style>
 </head>
 
@@ -171,8 +183,7 @@
 
     {% if banner_img %}
     <div class="section-title" style="border: none;">Banner:</div>
-    <div
-      style="display: grid; grid-template-columns: repeat({{ images_per_row | default(2) }}, 1fr); gap: 20px; margin-bottom: 30px;">
+    <div class="photo-grid">
       {% set items = [banner_img] if banner_img is string else banner_img %}
       {% for img in items %}
       <img src="{{ img }}" style="width: 100%; display: block; border: 1px solid #ccc; border-radius: 4px;"
@@ -183,8 +194,7 @@
 
     {% if inaugural_img %}
     <div class="section-title" style="border: none;">Inaugural Session:</div>
-    <div
-      style="display: grid; grid-template-columns: repeat({{ images_per_row | default(2) }}, 1fr); gap: 20px; margin-bottom: 30px;">
+    <div class="photo-grid">
       {% set items = [inaugural_img] if inaugural_img is string else inaugural_img %}
       {% for img in items %}
       <img src="{{ img }}" style="width: 100%; display: block; border: 1px solid #ccc; border-radius: 4px;"
@@ -195,8 +205,7 @@
 
     {% if group_img %}
     <div class="section-title" style="border: none;">Group Photo:</div>
-    <div
-      style="display: grid; grid-template-columns: repeat({{ images_per_row | default(2) }}, 1fr); gap: 20px; margin-bottom: 30px;">
+    <div class="photo-grid">
       {% set items = [group_img] if group_img is string else group_img %}
       {% for img in items %}
       <img src="{{ img }}" style="width: 100%; display: block; border: 1px solid #ccc; border-radius: 4px;"
@@ -207,8 +216,7 @@
 
     {% if certificate_img %}
     <div class="section-title" style="border: none;">Certificate:</div>
-    <div
-      style="display: grid; grid-template-columns: repeat({{ images_per_row | default(2) }}, 1fr); gap: 20px; margin-bottom: 30px;">
+    <div class="photo-grid">
       {% set items = [certificate_img] if certificate_img is string else certificate_img %}
       {% for img in items %}
       <img src="{{ img }}" style="width: 100%; display: block; border: 1px solid #ccc; border-radius: 4px;"

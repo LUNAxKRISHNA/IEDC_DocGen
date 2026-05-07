@@ -1,19 +1,47 @@
 {
   "name": "Budget Sheet",
-  "description": "Itemized event budget overview",
-  "icon": "💰",
+  "description": "Budget utilisation sheet",
   "fields": [
-    {"label": "Event Name", "name": "event_name", "type": "text", "required": true, "placeholder": "e.g. AAROHI - Women's Day"},
-    {"label": "Date", "name": "date", "type": "date", "required": true},
-    {"label": "Time", "name": "time", "type": "text", "required": true, "placeholder": "e.g. 9:45 AM"},
-    {"label": "Mode of the Event", "name": "mode", "type": "text", "required": true, "placeholder": "e.g. Offline"},
+    {
+      "label": "Event Name",
+      "name": "event_name",
+      "type": "text",
+      "required": true,
+      "placeholder": "e.g. AAROHI - Women's Day"
+    },
+    {
+      "label": "Date",
+      "name": "date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "label": "Time",
+      "name": "time",
+      "type": "text",
+      "required": true,
+      "placeholder": "e.g. 9:45 AM"
+    },
+    {
+      "label": "Mode of the Event",
+      "name": "mode",
+      "type": "text",
+      "required": true,
+      "placeholder": "e.g. Offline"
+    },
     {
       "label": "Faculty Coordinators",
       "name": "faculty_coordinators",
       "type": "table",
       "columns": [
-        {"name": "name", "label": "Name of the Faculty"},
-        {"name": "school", "label": "Name of the School"}
+        {
+          "name": "name",
+          "label": "Name of the Faculty"
+        },
+        {
+          "name": "school",
+          "label": "Name of the School"
+        }
       ]
     },
     {
@@ -21,9 +49,18 @@
       "name": "student_coordinators",
       "type": "table",
       "columns": [
-        {"name": "name", "label": "Name of the Student"},
-        {"name": "year_sem", "label": "Year/Sem"},
-        {"name": "branch", "label": "Branch"}
+        {
+          "name": "name",
+          "label": "Name of the Student"
+        },
+        {
+          "name": "year_sem",
+          "label": "Year/Sem"
+        },
+        {
+          "name": "branch",
+          "label": "Branch"
+        }
       ]
     },
     {
@@ -31,10 +68,22 @@
       "name": "expenses",
       "type": "table",
       "columns": [
-        {"name": "category", "label": "Category"},
-        {"name": "transaction_method", "label": "Transaction Method"},
-        {"name": "bill_attached", "label": "Bill / UPI (Attached)"},
-        {"name": "amount", "label": "Amount Spent (₹)"}
+        {
+          "name": "category",
+          "label": "Category"
+        },
+        {
+          "name": "transaction_method",
+          "label": "Transaction Method"
+        },
+        {
+          "name": "bill_attached",
+          "label": "Bill / UPI (Attached)"
+        },
+        {
+          "name": "amount",
+          "label": "Amount Spent (₹)"
+        }
       ]
     }
   ]

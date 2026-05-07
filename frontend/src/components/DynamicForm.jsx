@@ -208,8 +208,8 @@ export default function DynamicForm({ schema, formData, onChange }) {
             ) : type === "textarea" ? (
               <textarea
                 id={`field-${name}`}
-                className="field-input resize-none"
-                rows={3}
+                className="field-input resize-y min-h-[100px] whitespace-pre-wrap break-words"
+                rows={4}
                 value={formData[name] || ""}
                 placeholder={placeholder || ""}
                 onChange={(e) => handleChange(name, e.target.value)}
