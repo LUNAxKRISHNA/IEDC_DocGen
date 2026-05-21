@@ -5,9 +5,12 @@ import { useUser, SignOutButton, SignInButton } from "@clerk/clerk-react";
  * based on a hardcoded list of allowed email addresses.
  */
 const ALLOWED_EMAILS = [
-  "krishna.cvv230161@cvv.ac.in",
   "amrutha.cvv240884@cvv.ac.in",
   "iedc@cvv.ac.in",
+  "vishnu.cvv240878@cvv.ac.in",
+  "rohit.cvv240903@cvv.ac.in",
+  "aakanksha.cvv250062@cvv.ac.in",
+  "anuja.cvv241116@cvv.ac.in",
 ];
 
 export default function AuthGuard({ children }) {
