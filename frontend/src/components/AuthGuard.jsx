@@ -11,6 +11,7 @@ const ALLOWED_EMAILS = [
   "rohit.cvv240903@cvv.ac.in",
   "aakanksha.cvv250062@cvv.ac.in",
   "anuja.cvv241116@cvv.ac.in",
+  "anulekshmi.cvv250001@cvv.ac.in",
 ];
 
 export default function AuthGuard({ children }) {
