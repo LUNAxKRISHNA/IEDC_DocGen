@@ -33,8 +33,8 @@ export default function AuthGuard({ children }) {
       <div className="flex flex-col items-center justify-center h-screen bg-gray-50 p-6 text-center">
         <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 max-w-md w-full flex flex-col items-center">
           <Logo variant="black" className="h-16 mb-6" />
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">IEDC DocGen</h1>
-          <p className="text-gray-500 mb-8">Please sign in to access the document generator.</p>
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Document Generator</h1>
+          <p className="text-gray-500 mb-8">Please sign in to access the tool.</p>
           <div className="btn-primary w-full flex justify-center py-3">
             <SignInButton mode="modal" />
           </div>
