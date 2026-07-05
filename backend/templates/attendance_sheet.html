@@ -145,6 +145,13 @@
           <th>Attendance</th>
         </tr>
       </thead>
+      <tfoot>
+        <tr>
+          <td colspan="5" style="border: none; text-align: right; padding-top: 60px; font-size: 12px; font-weight: bold;">
+            Signature of Student Coordinator
+          </td>
+        </tr>
+      </tfoot>
       <tbody>
         {% if participants %}
         {% for row in participants %}
@@ -159,8 +166,6 @@
         {% endif %}
       </tbody>
     </table>
-
-    <div class="signature">Signature of Student Coordinator</div>
   </div>
 </body>
 

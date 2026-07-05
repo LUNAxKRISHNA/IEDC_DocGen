@@ -5,8 +5,8 @@
   "fields": [
     {"label": "Event Name", "name": "event_name", "type": "text", "required": true, "placeholder": "e.g. Aarohi Women's Day Celebration"},
     {"label": "Date", "name": "date", "type": "date", "required": true},
-    {"label": "Time", "name": "time", "type": "text", "required": true, "placeholder": "e.g. 9:45 AM"},
-    {"label": "Mode of the Event", "name": "mode", "type": "text", "required": true, "placeholder": "e.g. Offline"},
+    {"label": "Time", "name": "time", "type": "time", "required": true},
+    {"label": "Mode of the Event", "name": "mode", "type": "select", "required": true, "options": ["Online", "Offline", "Hybrid"]},
     {
       "label": "Faculty Coordinator",
       "name": "faculty_coordinators",

@@ -5,8 +5,8 @@
   "fields": [
     {"label": "Event Name", "name": "event_name", "type": "text", "required": true, "placeholder": "e.g. Workshop on AI"},
     {"label": "Date", "name": "date", "type": "date", "required": true},
-    {"label": "Time", "name": "time", "type": "text", "placeholder": "e.g. 10:00 AM"},
-    {"label": "Mode of the Event", "name": "mode", "type": "text", "placeholder": "e.g. Online / Offline"},
+    {"label": "Time", "name": "time", "type": "time"},
+    {"label": "Mode of the Event", "name": "mode", "type": "select", "options": ["Online", "Offline", "Hybrid"]},
     {
       "label": "Participants",
       "name": "participants",

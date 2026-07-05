@@ -214,6 +214,18 @@ export default function DynamicForm({ schema, formData, onChange }) {
                 placeholder={placeholder || ""}
                 onChange={(e) => handleChange(name, e.target.value)}
               />
+            ) : type === "select" ? (
+              <select
+                id={`field-${name}`}
+                className="field-input"
+                value={formData[name] || ""}
+                onChange={(e) => handleChange(name, e.target.value)}
+              >
+                <option value="" disabled>Select {label}</option>
+                {field.options?.map((opt) => (
+                  <option key={opt} value={opt}>{opt}</option>
+                ))}
+              </select>
             ) : (
               <input
                 id={`field-${name}`}
