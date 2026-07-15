@@ -12,6 +12,7 @@
     {"label": "No. of Participants", "name": "participants", "type": "number"},
     {"label": "Expenditure Amount (Rs.)", "name": "expenditure", "type": "number"},
     {"label": "Objective", "name": "objective", "type": "textarea", "placeholder": "Event objective..."},
+    {"label": "Include Dignitaries and Speakers", "name": "show_speakers", "type": "checkbox"},
     {
       "label": "Dignitaries and Speakers",
       "name": "speakers",

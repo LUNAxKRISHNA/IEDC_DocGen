@@ -143,6 +143,7 @@
       <div class="detail-value">Rs. {{ expenditure }}/-</div>
     </div>
 
+    {% if show_speakers %}
     <div class="section-title">Dignitaries and Speakers</div>
     <ol>
       {% if speakers %}
@@ -151,6 +152,7 @@
       {% endfor %}
       {% endif %}
     </ol>
+    {% endif %}
 
     <div class="section-title">About the event:</div>
     <div class="paragraph" style="white-space: pre-wrap;">{{ about }}</div>

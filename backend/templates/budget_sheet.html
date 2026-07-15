@@ -225,6 +225,7 @@
         </tr>
       </thead>
       <tbody>
+        {% if has_budget %}
         {% if expenses %}
         {% set ns = namespace(grand=0) %}
         {% for row in expenses %}
@@ -241,6 +242,11 @@
         <tr class="total-row">
           <td colspan="4" class="text-center">TOTAL</td>
           <td class="text-right">{{ ns.grand }}</td>
+        </tr>
+        {% endif %}
+        {% else %}
+        <tr>
+          <td colspan="5" class="text-center" style="padding: 20px;">No costs were incurred in the planning or execution of this event.</td>
         </tr>
         {% endif %}
       </tbody>

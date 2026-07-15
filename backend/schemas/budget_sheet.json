@@ -63,6 +63,11 @@
       ]
     },
     {
+      "label": "Is there a budget involved?",
+      "name": "has_budget",
+      "type": "checkbox"
+    },
+    {
       "label": "Expenses",
       "name": "expenses",
       "type": "table",

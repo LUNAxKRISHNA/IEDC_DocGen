@@ -226,6 +226,14 @@ export default function DynamicForm({ schema, formData, onChange }) {
                   <option key={opt} value={opt}>{opt}</option>
                 ))}
               </select>
+            ) : type === "checkbox" ? (
+              <input
+                id={`field-${name}`}
+                type="checkbox"
+                className="w-5 h-5 text-primary-600 border-gray-300 rounded focus:ring-primary-500 block mt-1"
+                checked={formData[name] || false}
+                onChange={(e) => handleChange(name, e.target.checked)}
+              />
             ) : (
               <input
                 id={`field-${name}`}

@@ -87,6 +87,11 @@
       ]
     },
     {
+      "label": "Include Resource Person",
+      "name": "show_resource_persons",
+      "type": "checkbox"
+    },
+    {
       "label": "Resource Person",
       "name": "resource_persons",
       "type": "table",
