@@ -51,6 +51,22 @@ TEMPLATES_DIR = BASE_DIR / "templates"
 jinja_env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
 
 
+def format_time_filter(value):
+    if not value:
+        return ""
+    from datetime import datetime
+    for fmt in ("%H:%M:%S", "%H:%M"):
+        try:
+            dt = datetime.strptime(value, fmt)
+            return dt.strftime("%I:%M %p")
+        except ValueError:
+            continue
+    return value
+
+jinja_env.filters['format_time'] = format_time_filter
+
+
+
 class PreviewRequest(BaseModel):
     name: str
     data: dict

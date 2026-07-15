@@ -18,9 +18,8 @@
     {
       "label": "Time",
       "name": "time",
-      "type": "text",
-      "required": true,
-      "placeholder": "e.g. 9:45 AM"
+      "type": "time",
+      "required": true
     },
     {
       "label": "Mode of the Event",

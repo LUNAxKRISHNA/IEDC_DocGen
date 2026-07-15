@@ -1,19 +1,51 @@
 {
-  "name": "Organizing Committee Sheet",
+  "name": "Organising Committee Sheet",
   "description": "Details of the organizing committee",
   "icon": "👥",
   "fields": [
-    {"label": "Event Name", "name": "event_name", "type": "text", "required": true, "placeholder": "e.g. Aarohi Women's Day Celebration"},
-    {"label": "Date", "name": "date", "type": "date", "required": true},
-    {"label": "Time", "name": "time", "type": "time", "required": true},
-    {"label": "Mode of the Event", "name": "mode", "type": "select", "required": true, "options": ["Online", "Offline", "Hybrid"]},
+    {
+      "label": "Event Name",
+      "name": "event_name",
+      "type": "text",
+      "required": true,
+      "placeholder": "e.g. Aarohi Women's Day Celebration"
+    },
+    {
+      "label": "Date",
+      "name": "date",
+      "type": "date",
+      "required": true
+    },
+    {
+      "label": "Time",
+      "name": "time",
+      "type": "time",
+      "required": true
+    },
+    {
+      "label": "Mode of the Event",
+      "name": "mode",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Online",
+        "Offline",
+        "Hybrid"
+      ]
+    },
     {
       "label": "Faculty Coordinator",
       "name": "faculty_coordinators",
       "type": "table",
       "columns": [
-        {"name": "name", "label": "Name of the Faculty"},
-        {"name": "school", "label": "Name of the School"}
+        {
+          "name": "name",
+          "label": "Name of the Faculty"
+        },
+        {
+          "name": "school",
+          "label": "Name of the School"
+        }
       ]
     },
     {
@@ -21,9 +53,18 @@
       "name": "student_coordinators",
       "type": "table",
       "columns": [
-        {"name": "name", "label": "Name of the Student"},
-        {"name": "year_sem", "label": "Year/Sem"},
-        {"name": "branch", "label": "Branch"}
+        {
+          "name": "name",
+          "label": "Name of the Student"
+        },
+        {
+          "name": "year_sem",
+          "label": "Year/Sem"
+        },
+        {
+          "name": "branch",
+          "label": "Branch"
+        }
       ]
     },
     {
@@ -31,9 +72,18 @@
       "name": "organising_team",
       "type": "table",
       "columns": [
-        {"name": "name", "label": "Name of the Student"},
-        {"name": "year_sem", "label": "Year/Sem"},
-        {"name": "branch", "label": "Branch"}
+        {
+          "name": "name",
+          "label": "Name of the Student"
+        },
+        {
+          "name": "year_sem",
+          "label": "Year/Sem"
+        },
+        {
+          "name": "branch",
+          "label": "Branch"
+        }
       ]
     },
     {
@@ -41,9 +91,18 @@
       "name": "resource_persons",
       "type": "table",
       "columns": [
-        {"name": "name", "label": "Name"},
-        {"name": "type", "label": "Internal / External"},
-        {"name": "organization", "label": "Name of the School/Organization"}
+        {
+          "name": "name",
+          "label": "Name"
+        },
+        {
+          "name": "type",
+          "label": "Internal / External"
+        },
+        {
+          "name": "organization",
+          "label": "Name of the School/Organization"
+        }
       ]
     }
   ]
